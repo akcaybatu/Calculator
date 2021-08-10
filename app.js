@@ -1,25 +1,43 @@
-function add(a,b){
-    return a + b;
-}
+// function add(a,b){
+//     return a + b;
+// }
 
-function subtract(a, b){
-    return a - b;
-}
+// function subtract(a, b){
+//     return a - b;
+// }
 
-function multiply(a, b){
-    return a * b;
-}
+// function multiply(a, b){
+//     return a * b;
+// }
 
-function sum(a, b){
-    return a / b;
-}
+// function sum(a, b){
+//     return a / b;
+// }
 
-const allBtns = document.querySelectorAll('.num-btn');
-allBtns.forEach( element => {
-  element.addEventListener('click', myFunction);
-});
+// function operator(operate, a ,b){
+//     switch (operate) {
+//         case value:
+            
+//             break;
+    
+//         default:
+//             break;
+//     }
+// }
 
-function myFunction(e) {
-    const value = e.target.value;
-    document.getElementById("entered-num").innerHTML = value;
-}
+const buttons = document.querySelector('.calculator-keys');
+const input = document.querySelector('#input');
+buttons.addEventListener('click', event =>{
+    if(!event.target.closest('.button')) return;
+
+    const button = event.target;
+    const buttonValue = button.textContent;
+    const inputValue = input.textContent;
+
+    if(inputValue == '0') {
+        input.textContent = buttonValue;
+    }
+    else{
+        input.textContent = inputValue + buttonValue;
+    }
+})

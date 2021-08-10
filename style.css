@@ -24,6 +24,10 @@
     outline: 0;
 }
 
+.button:hover{
+  background-color: #095863;
+}
+
 #calculator-screen{
     display: flex;
     margin-bottom: 5px;
